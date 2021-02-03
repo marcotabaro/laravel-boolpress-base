@@ -16,6 +16,6 @@ class CategorySeeder extends Seeder
             function ($el) {
                 $el->save();
             }
-        )
+        );
     }
 }
