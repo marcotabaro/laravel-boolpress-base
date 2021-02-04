@@ -13,7 +13,7 @@ class PostSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Post::class, 100)->create()->each(
+        factory(App\Post::class, 50)->create()->each(
             function ($el) {
                 $el->save();
             }

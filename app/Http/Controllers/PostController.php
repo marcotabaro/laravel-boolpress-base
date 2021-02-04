@@ -1,8 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use App\Post;
+
+
 
 class PostController extends Controller
 {
@@ -13,7 +16,10 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        $posts = Post::all();
+
+
+        return view(('index'), compact('posts'));
     }
 
     /**

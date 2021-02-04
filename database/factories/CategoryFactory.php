@@ -9,7 +9,7 @@ use Illuminate\Support\Str;
 $factory->define(Category::class, function (Faker $faker) {
 
     return [
-        'title' => $faker->realText(150, 1),
+        'title' => $faker->realText(15, 1),
         'slug' => $faker->slug(),
     ];
 });

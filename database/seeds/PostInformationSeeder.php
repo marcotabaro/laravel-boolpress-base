@@ -12,7 +12,7 @@ class PostInformationSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\PostInformation::class, 100)->create()->each(
+        factory(App\PostInformation::class, 50)->create()->each(
             function ($el) {
                 $el->save();
             }
