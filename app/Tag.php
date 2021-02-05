@@ -6,7 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Tag extends Model
 {
+
+    protected $table = 'tags';
     public function posts(){
-        return $this->hasMany('App\Post', )
+        return $this->hasMany('App\Post');
     }
 }
