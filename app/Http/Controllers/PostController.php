@@ -4,8 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Post;
-
-
+use App\PostInformation;
 
 class PostController extends Controller
 {
@@ -40,7 +39,17 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $newPost = new Post();
+        $newPostInformation = new PostInformation();
+
+        $newPost->title = $data['title'];
+        $newPost->author = $data['author'];
+        $newPostInformation->description = $data['description'];
+        $newPost->save();
+
+        $newPostInformation->post_id = $newPost->id;
+        $newPostInformation->save();
     }
 
     /**
